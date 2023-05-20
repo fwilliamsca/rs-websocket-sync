@@ -1,0 +1,21 @@
+[package]
+name = "rs-websocket-sync"
+version = "0.1.0"
+edition = "2021"
+authors = ["fwilliamsca <fwilliamsca@example.com>"]
+description = "High-performance, zero-copy WebSocket frame parser with SIMD optimizations."
+
+[dependencies]
+tokio = { version = "1.28", features = ["full"] }
+bytes = "1.4"
+thiserror = "1.0"
+futures-util = "0.3"
+log = "0.4"
+simd-adler32 = "0.3" # Simulating SIMD usage dependency
+
+[dev-dependencies]
+criterion = "0.4" # Benchmarking tool
+
+[[bench]]
+name = "frame_parsing"
+harness = false
